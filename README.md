@@ -37,6 +37,13 @@ If you get any errors, try running
 npm update && npm install
 ```
 
+or
+
+```bash
+npm ci
+```
+(will do a clean install of all dependencies)
+
 ## Website structure
 
 Pages are built using react components. For example, the content of the home page (`index.js`) is composed of components located in `src/components/page-content/home/`. The home page currently has four main content components: `Hero`, `Benefits`, `Feature`, `CTA`.  
