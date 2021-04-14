@@ -1,12 +1,12 @@
 import * as React from "react"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Container from "../components/container"
 import styled from "styled-components"
 
 const ProductsPage = () => (
   <Layout>
-    <SEO title="Products" />
+    <Seo title="Products" />
     <ProductsContainer>
       <Headline className="sectionTitle">Products that fit your needs</Headline>
       <BodyText className="bodyText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ornare, dolor sed faucibus scelerisque, risus tortor congue augue, placerat ullamcorper metus turpis eu est. Ut condimentum, magna ac malesuada ultrices, orci felis rutrum tellus, sed luctus velit felis at neque. Fusce libero purus, fringilla ornare fermentum ac, hendrerit et diam. Sed scelerisque, ante nec tempor feugiat, sem diam sollicitudin eros, eleifend dignissim enim urna in nulla. Phasellus commodo vehicula odio et luctus. Nulla mollis dolor sapien, a imperdiet purus aliquam quis. Aliquam eu dapibus libero, vel ultricies turpis. Etiam quis augue nec mauris sagittis fringilla. Praesent at tempor augue, ut laoreet nisl. Etiam rhoncus interdum nunc, accumsan convallis quam tempus ut. Donec at orci nisi.</BodyText>

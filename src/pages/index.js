@@ -1,18 +1,18 @@
 import * as React from "react"
 import Layout from "../components/layout"
 import styled from "styled-components"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import Container from "../components/container"
 
 // home page content:
 import Hero from "../components/page-content/home/hero"
 import Benefits from "../components/page-content/home/benefits"
 import Feature from "../components/page-content/home/feature"
-import CTA from "../components/page-content/home/cta"
+import Cta from "../components/page-content/home/cta"
 
 const LandingPage = () => (
   <Layout>
-    <SEO />
+    <Seo />
     <header>
       <HeroContainer>
         <Hero />
@@ -29,7 +29,7 @@ const LandingPage = () => (
     <footer>
       <Background primary>
         <CTAContainer>
-          <CTA />
+          <Cta />
         </CTAContainer>
       </Background>
     </footer>
