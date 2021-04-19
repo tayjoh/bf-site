@@ -1,5 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useForm, ValidationError } from '@formspree/react';
+
+
+function ContactForm() {
+  const [state, handleSubmit] = useForm("xvodgqgn");
+  if (state.succeeded) {
+      return <p className="bodyText">Thanks for joining!</p>;
+  }
+  return (
+    <Form id="signup" onSubmit={handleSubmit}>
+      <Input
+        id="email"
+        type="email" 
+        name="email"
+        placeholder="your email"
+      />
+      <ValidationError 
+        prefix="Email" 
+        field="email"
+        errors={state.errors}
+      />
+      <Button 
+        backgroundColor="#2f64ec" 
+        color="white" 
+        type="submit" 
+        disabled={state.submitting}
+      >
+        Sign up
+      </Button>
+    </Form>
+  );
+}
 
 const Hero = props => (
   <>
@@ -8,18 +40,7 @@ const Hero = props => (
       infrastructure that enables marketplaces and enterprises to create a seamless 
       payment experience while dramatically reducing the cost and complexity of payments.
     </BodyText>
-    <ButtonGroup>
-      {/* TODO: apply button colors via color variables */}
-      <li style={{ marginRight: `20px` }}>
-        <Button 
-          backgroundColor="#2f64ec" 
-          color="white" 
-          href="https://styled-components.com/docs/basics#passed-props">
-            Start Now
-        </Button>
-      </li>
-      <li><Button href="https://github.com/KyleAMathews/typography.js">Contact Us</Button></li>
-    </ButtonGroup>
+    <ContactForm />
   </>
 )
 
@@ -36,19 +57,42 @@ const Headline = styled.h1`
 const BodyText = styled.p`
   margin: 25px 0;
   @media (min-width: 670px) {
-    margin: 25px 56% 60px 0;
+    margin: 25px 56% 40px 0;
   }
 `
 
-const ButtonGroup = styled.ul`
+const Form = styled.form`
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  > * {
+    margin-right: 20px;
+  }
 `
 
-const Button = styled.a`
+const Input = styled.input`
+  font-size: 17px;
+  padding: 5px 20px 8px 13px;
+  background-color: #f6f9fc;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  box-shadow: 0 4px 6px rgba(50,50,93,.11),0 1px 3px rgba(0,0,0,.08);
+  text-decoration: none;
+  border: none;
+  outline: none;
+  webkit-transition: background-color .1s ease-in,color .1s ease-in;
+  transition: background-color .1s ease-in,color .1s ease-in;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: white;
+  }
+`
+
+const Button = styled.button`
   white-space: nowrap;
   display: inline-block;
   height: 40px;

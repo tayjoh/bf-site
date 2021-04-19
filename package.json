@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@babel/compat-data": "^7.13.15",
+    "@formspree/react": "^2.2.3",
     "babel": "^6.23.0",
     "gatsby": "^2.32.12",
     "gatsby-image": "^2.11.0",
